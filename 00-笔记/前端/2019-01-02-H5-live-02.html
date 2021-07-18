@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>H5 直播系统开发之搭建视频流服务器 Nginx | 我的生活</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="description" content="悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。">
+    <link rel="preload" href="/assets/css/0.styles.0d1114a1.css" as="style"><link rel="preload" href="/assets/js/app.849d1efe.js" as="script"><link rel="preload" href="/assets/js/2.b5d0274c.js" as="script"><link rel="preload" href="/assets/js/15.173172ed.js" as="script"><link rel="prefetch" href="/assets/js/10.3fe64d4c.js"><link rel="prefetch" href="/assets/js/11.85e96007.js"><link rel="prefetch" href="/assets/js/12.7ed4383f.js"><link rel="prefetch" href="/assets/js/13.ae9e60df.js"><link rel="prefetch" href="/assets/js/14.feca9d7e.js"><link rel="prefetch" href="/assets/js/16.2757dbc2.js"><link rel="prefetch" href="/assets/js/17.1801d974.js"><link rel="prefetch" href="/assets/js/18.6118e64c.js"><link rel="prefetch" href="/assets/js/19.86d38c6c.js"><link rel="prefetch" href="/assets/js/20.250f550f.js"><link rel="prefetch" href="/assets/js/21.63a62670.js"><link rel="prefetch" href="/assets/js/22.10cf29dd.js"><link rel="prefetch" href="/assets/js/23.ccd9b234.js"><link rel="prefetch" href="/assets/js/24.677f36ed.js"><link rel="prefetch" href="/assets/js/25.70aed2f0.js"><link rel="prefetch" href="/assets/js/26.de44d1a7.js"><link rel="prefetch" href="/assets/js/27.e8590507.js"><link rel="prefetch" href="/assets/js/28.c014ec6a.js"><link rel="prefetch" href="/assets/js/29.02c48ef7.js"><link rel="prefetch" href="/assets/js/3.3457e0aa.js"><link rel="prefetch" href="/assets/js/30.33a6ab56.js"><link rel="prefetch" href="/assets/js/31.a0a4686b.js"><link rel="prefetch" href="/assets/js/32.eacb158c.js"><link rel="prefetch" href="/assets/js/33.ebe7927e.js"><link rel="prefetch" href="/assets/js/34.5cf58507.js"><link rel="prefetch" href="/assets/js/35.c770055d.js"><link rel="prefetch" href="/assets/js/36.3e732c9d.js"><link rel="prefetch" href="/assets/js/37.e88509ce.js"><link rel="prefetch" href="/assets/js/38.a6cb0f12.js"><link rel="prefetch" href="/assets/js/39.cd7636d0.js"><link rel="prefetch" href="/assets/js/4.82d25d49.js"><link rel="prefetch" href="/assets/js/40.f11b7add.js"><link rel="prefetch" href="/assets/js/41.31fc53ae.js"><link rel="prefetch" href="/assets/js/42.4291ef54.js"><link rel="prefetch" href="/assets/js/43.9a17a441.js"><link rel="prefetch" href="/assets/js/44.db02a181.js"><link rel="prefetch" href="/assets/js/45.e664e3b8.js"><link rel="prefetch" href="/assets/js/46.a19da9f7.js"><link rel="prefetch" href="/assets/js/5.84f15089.js"><link rel="prefetch" href="/assets/js/6.da8a8aff.js"><link rel="prefetch" href="/assets/js/7.51e0c199.js"><link rel="prefetch" href="/assets/js/8.ee4eb807.js"><link rel="prefetch" href="/assets/js/9.1aedd1ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d1114a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="ant-row"><div class="nav-button"><i aria-label="icon: bars" class="anticon anticon-bars"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg></i> <span></span></div> <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a href="/" class="router-link-active home-link"><img src="/assets/logo.png" alt="我的生活" class="logo"> <span class="site-name">我的生活</span></a> <div class="search-box mobile-search"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="ant-col ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><ul role="menu" id="nav" class="ant-menu ant-menu-horizontal ant-menu-root ant-menu-light"><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/" class="router-link-active">
+          首页
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>
+          全栈进阶
+        </span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/00-笔记/">
+          学习笔记
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/02-tools/">
+          常用工具
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul> <a href="https://github.com/fuyi501" target="_blank" rel="noopener noreferrer" class="repo-link"><i aria-label="icon: github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></i></a></nav></div></div> <!----></header> <!----> <main class="page"> <div class="theme-antdocs-content content__default"><h2 id="_1-使用-nginx-rtmp-module-搭建-rtmp-hls-流媒体服务器">1. 使用 nginx-rtmp-module 搭建 RTMP + HLS 流媒体服务器 <a href="#_1-使用-nginx-rtmp-module-搭建-rtmp-hls-流媒体服务器" class="header-anchor">#</a></h2> <h3 id="_1-最简单方式安装">（1） 最简单方式安装 <a href="#_1-最简单方式安装" class="header-anchor">#</a></h3> <p>我们使用 Nginx 作为视频流服务器，那么必须需要 Nginx 支持视频流，这里就需要安装 <code>nginx-rtmp-module</code> 模块了，<code>libnginx-mod-rtmp</code> 是 <code>nginx-rtmp-module</code> 模块在 ubuntu 库中的名称，这个模块在 ubuntu 18.04 上是自带的，可以通过 <code>apt-get install libnginx-mod-rtmp</code> 进行安装，但是在 ubuntu 16.04 上如果想要安装，直接下载 <code>libnginx-mod-rtmp_1.14.0-0+xenial1_amd64.deb</code> 安装的话会被告知 <code>nginx</code> 版本过低，依赖有问题，16.04自带的nginx版本是1.10，而rtmp需要1.14版本。</p> <p>安装 <code>nginx-rtmp-module</code> 模块大部分都是编译 nginx 和 nginx-rtmp-module 来安装的，如果你不想编译安装，可以通过升级 nginx 到 1.14 版本，然后再使用 <code>apt-get install libnginx-mod-rtmp</code> 命令安装 <code>libnginx-mod-rtmp</code> 就可以了。</p> <p><strong>1. 升级nginx到1.14</strong></p> <p>依次运行如下命令：</p> <div class="language- extra-class"><pre class="language-text"><code>sudo apt-get install software-properties-common python-software-properties
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get update
+sudo apt-get install nginx
+</code></pre></div><p><strong>2. 安装libnginx-mod-rtmp</strong></p> <div class="language- extra-class"><pre class="language-text"><code>sudo apt-get install libnginx-mod-rtmp
+</code></pre></div><p>这样就成功在Ubuntu 16.04上安装了 <code>libnginx-mod-rtmp</code>。</p> <h3 id="_2-编译安装-nginx-rtmp-module">（2） 编译安装 nginx-rtmp-module <a href="#_2-编译安装-nginx-rtmp-module" class="header-anchor">#</a></h3> <p><strong>1. 下载 nginx-rtmp-module：</strong></p> <p>nginx-rtmp-module 的官方 github 地址：https://github.com/arut/nginx-rtmp-module.git</p> <p><strong>2. 编译安装 Nginx</strong></p> <p>nginx 的官方网站为：http://nginx.org/en/download.html</p> <p>本文使用的是 <code>nginx-1.14.2</code>，安装 Nginx 需要依赖其它第三方库，需要先下载编译好：</p> <p><strong>(1) zlib库</strong></p> <p>官网地址为：http://www.zlib.net/ ，本文采用的版本为 <code>zlib-1.2.11</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>wget http://www.zlib.net/zlib-1.2.11.tar.gz
+tar xf zlib-1.2.11.tar.gz
+cd zlib-1.2.11
+./configure
+make &amp;&amp; make install
+</code></pre></div><p><strong>(2) openssl库</strong></p> <p>官网下载地址：https://www.openssl.org/source/ ，本文使用的版本：<code>openssl-1.1.0j</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>wget https://www.openssl.org/source/openssl-1.1.0j.tar.gz
+tar xf openssl-1.1.0j.tar.gz
+cd openssl-1.1.0j
+./config
+make &amp;&amp; make install
+</code></pre></div><p><strong>(3) pcre库</strong></p> <p>官网下载地址：ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ ，本文使用的版本：<code>pcre-8.38</code>。
+<strong>注意：pcre 库建议不要使用 pcre2 系列的版本，会导致 Nginx 编译报错的问题。</strong></p> <div class="language- extra-class"><pre class="language-text"><code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.bz2
+tar xf pcre-8.38.tar.bz2
+cd pcre-8.38
+./configure
+make &amp;&amp; make install
+</code></pre></div><p><strong>(4) 编译安装Nginx</strong></p> <p>官网下载地址：http://nginx.org/en/download.html ，本文采用的版本为：<code>nginx-1.14.2</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>wget http://nginx.org/download/nginx-nginx-1.14.2.tar.gz
+tar xf nginx-nginx-1.14.2.tar.gz
+cd nginx-nginx-1.14.2
+./configure --prefix=/usr/local/nginx --add-module=../nginx-rtmp-module --with-http_ssl_module  --with-pcre=../pcre-8.38 --with-openssl=../openssl-1.1.0j --with-zlib=../zlib-1.2.11
+make &amp;&amp; make install
+</code></pre></div><p>执行完以上步骤，如果不出错误的话，Nginx 编译出来会生成到 <code>/usr/local/nginx</code> 目录。</p> <p><strong>最后启动nginx:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>cd /usr/local/nginx/
+sbin/nginx -c conf/nginx.conf
+或者
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre></div><h2 id="_2-使用-nginx-http-flv-module-搭建-rtmp-http-flv-流媒体服务器">2. 使用 nginx-http-flv-module 搭建 RTMP + HTTP-FLV 流媒体服务器 <a href="#_2-使用-nginx-http-flv-module-搭建-rtmp-http-flv-流媒体服务器" class="header-anchor">#</a></h2> <p>编译安装方法和编译安装 nginx-rtmp-module 相似，只不过 nginx-http-flv-module 模块和 nginx-rtmp-module 模块不能一起使用，安装 nginx-http-flv-module 模块时先把 nginx-rtmp-module 卸载了，最后的编译命令如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>./configure --prefix=/usr/local/nginx --add-module=../nginx-http-flv-module-master --with-http_ssl_module  --with-pcre=../pcre-8.38 --with-openssl=../openssl-1.1.0j --with-zlib=../zlib-1.2.11
+</code></pre></div><h2 id="_3-推流和播放测试">3. 推流和播放测试 <a href="#_3-推流和播放测试" class="header-anchor">#</a></h2> <p>打开 <code>nginx.conf</code> 配置文件，在最下面添加如下配置：</p> <div class="language-json extra-class"><pre class="language-json"><code>rtmp <span class="token punctuation">{</span>
+    out_queue     <span class="token number">4096</span>;
+    out_cork         <span class="token number">8</span>;
+    max_streams    <span class="token number">128</span>;
+    timeout        15s;
+
+    server <span class="token punctuation">{</span>
+        listen <span class="token number">1935</span>;
+	    chunk_size <span class="token number">4096</span>;
+
+        application live <span class="token punctuation">{</span>
+            live on;
+            max_connections <span class="token number">1024</span>;
+            gop_cache on;
+        <span class="token punctuation">}</span>
+		
+        application hls <span class="token punctuation">{</span>
+            live on;
+            hls on;  
+            hls_path /etc/nginx/temp/hls; <span class="token comment">// 这里的路径要写成你的路径，用来存放 hls 视频片段，如果没有这个目录需要自己新建，而且必须是绝对路径，否则可能会获取不到视频数据</span>
+            hls_fragment 5s; 
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置写好之后，重启 Nginx 服务器：</p> <div class="language- extra-class"><pre class="language-text"><code>sudo nginx -s reload
+</code></pre></div><p>现在我们的视频流服务器就搭建好了，我们来测试一下。</p> <p>这里先说明下我的视频流服务器地址是：<code>192.168.9.12</code>；
+原始视频流是海康的摄像头，地址是：<code>rtsp://admin:123456@192.168.9.33:554/Streaming/Channels/101</code></p> <p>原视频流 rtsp 播放测试：</p> <p><img src="http://img.fuwenwei.com/blog/rtsp%E6%92%AD%E6%94%BE2.png" alt=""></p> <p>如果没有原始视频流地址，可以使用 MP4 等视频文件进行推流。</p> <h3 id="_3-1-使用-rtmp-播放">3.1 使用 RTMP 播放 <a href="#_3-1-使用-rtmp-播放" class="header-anchor">#</a></h3> <p>我使用 ffmpeg 进行推流，推流命令写成：</p> <div class="language- extra-class"><pre class="language-text"><code>ffmpeg -i rtsp://admin:123456@192.168.9.33:554/Streaming/Channels/101 -f mp4 -vcodec copy -r 25 -s 1920*1080 -b:v 1024000 -an -f flv -an rtmp://192.168.9.12:1935/live/stream
+</code></pre></div><p>这里重点注意推流的地址：<code>rtmp://192.168.9.12:1935/live/stream</code>，其中的 <code>live</code> 要和你的配置文件中 <code>live</code> 相对应，后面的 <code>stream</code> 可以随便写，这样你就可以使用播放器进行播放了，比如使用 vlc 进行播放，如下图所示：</p> <p><img src="http://img.fuwenwei.com/blog/rtmp%E6%92%AD%E6%94%BE.png" alt=""></p> <h3 id="_3-2-使用-hls-播放">3.2 使用 HLS 播放 <a href="#_3-2-使用-hls-播放" class="header-anchor">#</a></h3> <p>如果你想使用 hls 来播放视频，还需要在 <code>nginx.conf</code> 配置文件中的 <code>http</code> 模块中添加一个 <code>server</code>，这里我们监听 <code>8080</code> 端口，如下所示：</p> <div class="language-json extra-class"><pre class="language-json"><code>server <span class="token punctuation">{</span>
+    listen <span class="token number">8080</span>;
+    server_name  localhost;
+
+    location /hls <span class="token punctuation">{</span>  
+        #server hls fragments  
+        types<span class="token punctuation">{</span>  
+            application/vnd.apple.mpegurl m3u8;  
+            video/mp2t ts;  
+        <span class="token punctuation">}</span>  
+        #alias temp/hls;
+        root /etc/nginx/temp;  <span class="token comment">// 这里的路径要和 rtmp 配置中的路径一致</span>
+        expires <span class="token number">-1</span>;  
+        add_header Cache-Control no-cache;
+        add_header Access-Control-Allow-Origin *;
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置好了之后，再次重启 Nginx 服务器。</p> <p>这次推流命令还是上面的命令：</p> <div class="language- extra-class"><pre class="language-text"><code>ffmpeg -i rtsp://admin:123456@192.168.9.33:554/Streaming/Channels/101 -f mp4 -vcodec copy -r 25 -s 1920*1080 -b:v 1024000 -an -f flv -an rtmp://192.168.9.12:1935/live/stream
+</code></pre></div><p>但是我们的播放地址改变了，我们使用 HTTP 协议播放，地址为：<code>http://192.168.9.12:8080/hls/stream.m3u8</code>，如下图所示：</p> <p><img src="http://img.fuwenwei.com/blog/m3u8%E6%92%AD%E6%94%BE.png" alt=""></p> <h3 id="_3-3-使用-http-flv-播放">3.3 使用 HTTP-FLV 播放 <a href="#_3-3-使用-http-flv-播放" class="header-anchor">#</a></h3> <p>使用 <code>HTTP-FLV</code> 播放不需要再增加其他配置了，但是上面的两部分配置都是必须的，而且要确保你是编译安装的 <code>nginx-http-flv-module</code> 模块。</p> <p>根据 https://github.com/winshining/nginx-http-flv-module 中的介绍，这里的播放地址我们得写成这种格式：<code>http://192.168.9.12:8080/live?app=live&amp;stream=stream</code> 才行，如下图所示：</p> <p><img src="http://img.fuwenwei.com/blog/http-flv%E6%92%AD%E6%94%BE.png" alt=""></p> <h2 id="_4-注意事项">4. 注意事项 <a href="#_4-注意事项" class="header-anchor">#</a></h2> <ul><li><p>rtmp 的配置必须放在 nginx 服务器的默认配置文件 nginx.conf 中，不可以自己新建一个配置文件包含进去，这样 rtmp 会不起作用。</p></li> <li><p>配置文件中 <code>hls_path /etc/nginx/temp/hls;</code> 这一项，这里的路径必须是绝对路径，否则可能会获取不到视频数据，我一开始写的 <code>./temp/hls</code>，就一直播放不出视频来，找了好久问题才发现出现在这里</p></li> <li><p>如果是在阿里云或者腾讯云上安装，记得要在安全组里打开 <strong>1935</strong> 端口。</p></li></ul> <h2 id="_5-延时对比">5. 延时对比 <a href="#_5-延时对比" class="header-anchor">#</a></h2> <h3 id="http-flv和rtmp和rtsp播放延时对比">http-flv和rtmp和rtsp播放延时对比 <a href="#http-flv和rtmp和rtsp播放延时对比" class="header-anchor">#</a></h3> <p><img src="http://img.fuwenwei.com/blog/http-flv%E5%92%8Crtmp%E5%92%8Crtsp%E6%92%AD%E6%94%BE%E5%BB%B6%E6%97%B6%E5%AF%B9%E6%AF%94.png" alt=""></p> <h3 id="hls和rtmp和rtsp播放延时对比">hls和rtmp和rtsp播放延时对比 <a href="#hls和rtmp和rtsp播放延时对比" class="header-anchor">#</a></h3> <p><img src="http://img.fuwenwei.com/blog/m3u8%E5%92%8Crtmp%E5%92%8Crtsp%E6%92%AD%E6%94%BE%E5%BB%B6%E6%97%B6%E5%AF%B9%E6%AF%94.png" alt=""></p> <h3 id="http-flv和m3u8播放延时对比">http-flv和m3u8播放延时对比 <a href="#http-flv和m3u8播放延时对比" class="header-anchor">#</a></h3> <p><img src="http://img.fuwenwei.com/blog/http-flv%E5%92%8Cm3u8%E6%92%AD%E6%94%BE%E5%BB%B6%E6%97%B6%E5%AF%B9%E6%AF%94.png" alt=""></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/18/2021, 3:11:15 PM</span></div></footer> <!----> </main> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.849d1efe.js" defer></script><script src="/assets/js/2.b5d0274c.js" defer></script><script src="/assets/js/15.173172ed.js" defer></script>
+  </body>
+</html>

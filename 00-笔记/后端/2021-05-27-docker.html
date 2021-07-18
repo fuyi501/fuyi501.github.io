@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>docker 基本操作 | 我的生活</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="description" content="悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。">
+    <link rel="preload" href="/assets/css/0.styles.0d1114a1.css" as="style"><link rel="preload" href="/assets/js/app.849d1efe.js" as="script"><link rel="preload" href="/assets/js/2.b5d0274c.js" as="script"><link rel="preload" href="/assets/js/21.63a62670.js" as="script"><link rel="prefetch" href="/assets/js/10.3fe64d4c.js"><link rel="prefetch" href="/assets/js/11.85e96007.js"><link rel="prefetch" href="/assets/js/12.7ed4383f.js"><link rel="prefetch" href="/assets/js/13.ae9e60df.js"><link rel="prefetch" href="/assets/js/14.feca9d7e.js"><link rel="prefetch" href="/assets/js/15.173172ed.js"><link rel="prefetch" href="/assets/js/16.2757dbc2.js"><link rel="prefetch" href="/assets/js/17.1801d974.js"><link rel="prefetch" href="/assets/js/18.6118e64c.js"><link rel="prefetch" href="/assets/js/19.86d38c6c.js"><link rel="prefetch" href="/assets/js/20.250f550f.js"><link rel="prefetch" href="/assets/js/22.10cf29dd.js"><link rel="prefetch" href="/assets/js/23.ccd9b234.js"><link rel="prefetch" href="/assets/js/24.677f36ed.js"><link rel="prefetch" href="/assets/js/25.70aed2f0.js"><link rel="prefetch" href="/assets/js/26.de44d1a7.js"><link rel="prefetch" href="/assets/js/27.e8590507.js"><link rel="prefetch" href="/assets/js/28.c014ec6a.js"><link rel="prefetch" href="/assets/js/29.02c48ef7.js"><link rel="prefetch" href="/assets/js/3.3457e0aa.js"><link rel="prefetch" href="/assets/js/30.33a6ab56.js"><link rel="prefetch" href="/assets/js/31.a0a4686b.js"><link rel="prefetch" href="/assets/js/32.eacb158c.js"><link rel="prefetch" href="/assets/js/33.ebe7927e.js"><link rel="prefetch" href="/assets/js/34.5cf58507.js"><link rel="prefetch" href="/assets/js/35.c770055d.js"><link rel="prefetch" href="/assets/js/36.3e732c9d.js"><link rel="prefetch" href="/assets/js/37.e88509ce.js"><link rel="prefetch" href="/assets/js/38.a6cb0f12.js"><link rel="prefetch" href="/assets/js/39.cd7636d0.js"><link rel="prefetch" href="/assets/js/4.82d25d49.js"><link rel="prefetch" href="/assets/js/40.f11b7add.js"><link rel="prefetch" href="/assets/js/41.31fc53ae.js"><link rel="prefetch" href="/assets/js/42.4291ef54.js"><link rel="prefetch" href="/assets/js/43.9a17a441.js"><link rel="prefetch" href="/assets/js/44.db02a181.js"><link rel="prefetch" href="/assets/js/45.e664e3b8.js"><link rel="prefetch" href="/assets/js/46.a19da9f7.js"><link rel="prefetch" href="/assets/js/5.84f15089.js"><link rel="prefetch" href="/assets/js/6.da8a8aff.js"><link rel="prefetch" href="/assets/js/7.51e0c199.js"><link rel="prefetch" href="/assets/js/8.ee4eb807.js"><link rel="prefetch" href="/assets/js/9.1aedd1ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d1114a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="ant-row"><div class="nav-button"><i aria-label="icon: bars" class="anticon anticon-bars"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg></i> <span></span></div> <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a href="/" class="router-link-active home-link"><img src="/assets/logo.png" alt="我的生活" class="logo"> <span class="site-name">我的生活</span></a> <div class="search-box mobile-search"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="ant-col ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><ul role="menu" id="nav" class="ant-menu ant-menu-horizontal ant-menu-root ant-menu-light"><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/" class="router-link-active">
+          首页
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>
+          全栈进阶
+        </span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/00-笔记/">
+          学习笔记
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/02-tools/">
+          常用工具
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul> <a href="https://github.com/fuyi501" target="_blank" rel="noopener noreferrer" class="repo-link"><i aria-label="icon: github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></i></a></nav></div></div> <!----></header> <!----> <main class="page"> <div class="theme-antdocs-content content__default"><h1 id="docker-基本操作">docker 基本操作 <a href="#docker-基本操作" class="header-anchor">#</a></h1> <h2 id="镜像基本操作">镜像基本操作 <a href="#镜像基本操作" class="header-anchor">#</a></h2> <div class="language-sh extra-class"><pre class="language-sh"><code>docker pull 镜像名称<span class="token punctuation">[</span>:tag<span class="token punctuation">]</span> <span class="token comment"># 拉取镜像到本地</span>
+
+docker images <span class="token comment"># 查看全部本地的镜像</span>
+
+docker rmi 镜像的标识 <span class="token comment"># 删除本地镜像</span>
+
+docker save -o 导出的路径 镜像id <span class="token comment"># 将本地的镜像导出</span>
+
+docker load -i 镜像文件 <span class="token comment"># 加载本地的镜像文件</span>
+
+docker tag 镜像id 新镜像名称∶版本 <span class="token comment"># 修改镜像名称</span>
+</code></pre></div><h2 id="容器基本操作">容器基本操作 <a href="#容器基本操作" class="header-anchor">#</a></h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 1. 运行容器</span>
+docker run 镜像的标识镜像名称<span class="token punctuation">[</span>:tag<span class="token punctuation">]</span>
+docker run -d -p 宿主机端口∶容器端口 --name 容器名称 镜像的标识镜像名称<span class="token punctuation">[</span>:tag<span class="token punctuation">]</span>
+<span class="token comment"># -d: 代表后台运行容器</span>
+<span class="token comment"># -p: 宿主机端口∶容器端口∶ 为了映射当前Linux的端口和容器的端口</span>
+<span class="token comment"># --name 容器名称∶指定容器的名称</span>
+
+<span class="token comment"># 2. 查看正在运行的容器</span>
+docker <span class="token function">ps</span> <span class="token punctuation">[</span>-qa<span class="token punctuation">]</span>
+<span class="token comment"># -a: 查看全部的容器，包括没有运行</span>
+<span class="token comment"># -q: 只查看容器得到标识</span>
+
+<span class="token comment"># 3. 查看容器的日志</span>
+docker logs -f 容器id
+<span class="token comment"># -f: 可以滚动查看日志的最后几行</span>
+
+<span class="token comment"># 4. 进入到容器内部</span>
+docker exec-it 容器id <span class="token function">bash</span>
+
+<span class="token comment"># 5. 删除容器（删除容器前，需要先停止容器）</span>
+docker stop 容器ID <span class="token comment"># 停止指定的容器</span>
+docker stop <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -qa<span class="token variable">)</span></span> <span class="token comment"># 停止全部容器</span>
+docker <span class="token function">rm</span> 容器id <span class="token comment"># 删除指定容器</span>
+docker <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>docker <span class="token function">ps</span> -qa<span class="token variable">)</span></span> <span class="token comment"># 删除全部容器</span>
+
+<span class="token comment"># 6. 启动容器</span>
+docker start 容器ID
+</code></pre></div><h2 id="数据卷">数据卷 <a href="#数据卷" class="header-anchor">#</a></h2> <blockquote><p>数据卷：将宿主机的一个目录映射到容器的一个目录中可以在宿主机中操作目录中的内容，那么容器内部映射的文件，也会跟着一起改变</p></blockquote> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 1.创建数据卷</span>
+docker volume create 数据卷名称
+<span class="token comment"># 创建数据卷之后，默认会存放在一个目录下 /var/lib/docker/volumes/数据卷名称/_data</span>
+
+<span class="token comment"># 2.查看数据卷的详细信息</span>
+docker volume inspect 数据卷名称
+
+<span class="token comment"># 3.查看全部数据卷</span>
+docker volume <span class="token function">ls</span>
+
+<span class="token comment"># 4.删除数据卷</span>
+docker volume <span class="token function">rm</span> 数据卷名称
+
+<span class="token comment"># 5.应用数据卷</span>
+<span class="token comment"># 当你映射数据卷时，如果数据卷不存在。Docker会帮你自动创建，会将容器内部自带的文件，存储在默认的存放路径中。</span>
+docker run -v 数据卷名称∶容器内部的路径 镜像id
+<span class="token comment"># 直接指定一个路径作为数据卷的存放位置。这个路径下是空的。</span>
+docker run -v 路径∶容器内部的路径 镜像id
+</code></pre></div><h2 id="自定义镜像">自定义镜像 <a href="#自定义镜像" class="header-anchor">#</a></h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 1. 创建一个 Dockerfile 文件，并且指定自定义镜像信息。</span>
+<span class="token comment"># Dockerfile文件中常用的内容</span>
+from∶ 指定当前自定义镜像依赖的环境
+copy∶ 将相对路径下的内容复制到自定义镜像中
+workdir∶ 声明镜像的默认工作目录
+cmd∶ 需要执行的命令（在workdir下执行的，cmd可以写多的，只以最后一个为准）
+<span class="token comment"># 举个例子，自定义一个 tomcat 镜像，并且将 ssm.war 部署到 tomcat 中</span>
+from daocloud.io/library/tomcat:8.5.15-jre8
+copy ssm.war /usr/local/tomcat/webapps
+
+<span class="token comment"># 2. 将准备好 Dockerfile 和相应的文件拖拽到 Linux 操作系统中，通过Docker的命令制作镜像</span>
+docker build -t 镜像名称<span class="token punctuation">[</span>:tag<span class="token punctuation">]</span>
+</code></pre></div><h2 id="docker-compose">docker-compose <a href="#docker-compose" class="header-anchor">#</a></h2> <blockquote><ul><li>之前运行一个镜像，需要添加大量的参数。</li> <li>可以通过 Docker-Compose 编写这些参数。</li> <li>Docker-Compose 可以帮助我们批量的管理容器。</li> <li>只需要通过一个 docker-compose.yml 文件去维护即可。</li></ul></blockquote> <h3 id="下载安装-docker-compose">下载安装 docker-compose <a href="#下载安装-docker-compose" class="header-anchor">#</a></h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 1. 去github官网搜索docker-compose，下载1.24.1版本的Docker-Compose</span>
+https://github.com/docker/compose/releases/dowmload/1.24.1/docker-compose-Linux-x86_64
+
+<span class="token comment"># 2. 将下载好的文件，拖拽到Linux操作系统中</span>
+
+<span class="token comment"># 3. 需要将DockerCompose文件的名称修改一下，基于DockerCompose文件一个可执行的权限</span>
+<span class="token function">mv</span> docker-compose-Linux-x86_64 docker-compose
+<span class="token function">chmod</span> <span class="token number">777</span> docker-compose
+
+<span class="token comment"># 4. 方便后期操作，配置一个环境变量</span>
+<span class="token comment"># 将docker-compose文件移动到了/usr/local/bin，修改了/etc/profile文件，给/usr/local/bin配置到了PATH中</span>
+<span class="token function">mv</span> docker-compose /usr/local/bin
+<span class="token function">vi</span> /etc/profile
+    <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>:/usr/local/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">source</span> /etc/profile
+
+<span class="token comment"># 5.测试一下</span>
+<span class="token comment"># 在任意目录下输入docker-compose</span>
+</code></pre></div><h3 id="docker-compose-管理-mysql-和-tomcat-容器">Docker-Compose 管理 MySQL 和 Tomcat 容器 <a href="#docker-compose-管理-mysql-和-tomcat-容器" class="header-anchor">#</a></h3> <blockquote><p>yml 文件以 key∶ value 方式来指定配置信息多个配置信息以换行 + 缩进的方式来区分在 docker-compose.yml 文件中，不要使用制表符</p></blockquote> <div class="language-yaml extra-class"><pre class="language-yaml"><code>version<span class="token punctuation">:</span><span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql</span><span class="token punctuation">:</span>                     <span class="token comment"># 服务的名称</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always          <span class="token comment"># 代表只要Docker启动，那么这个容器就跟着一起启动</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> daocloud.io/library/mysql<span class="token punctuation">:</span>5.7.4     <span class="token comment"># 指定镜像路径</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql    <span class="token comment"># 指定容器名称</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 3306<span class="token punctuation">:</span><span class="token number">3306</span>        <span class="token comment"># 指定端口号的映射</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">MYSQL_ROOT_PASSWORD</span><span class="token punctuation">:</span> root         <span class="token comment"># 指定MySQL的ROOT用户登录密码</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai                 <span class="token comment"># 指定时区</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /opt/docker_mysql<span class="token punctuation">-</span>tomcat/mysql_data<span class="token punctuation">:</span>/var/lib/mysql        <span class="token comment"># 映射数据卷</span>
+  <span class="token key atrule">tomcat</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always          <span class="token comment"># 代表只要Docker启动，那么这个容器就跟着一起启动</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> daocloud.io/library/tomcat<span class="token punctuation">:</span>8.5.15<span class="token punctuation">-</span>jre8     <span class="token comment"># 指定镜像路径</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> tomcat    <span class="token comment"># 指定容器名称</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8080<span class="token punctuation">:</span><span class="token number">8080</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">MYSQL_ROOT_PASSWORD</span><span class="token punctuation">:</span> root         <span class="token comment"># 指定MySQL的ROOT用户登录密码</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /opt/docker_mysql<span class="token punctuation">-</span>tomcat/tomcat_webapps<span class="token punctuation">:</span>/usr/local/tomcat/webapps
+      <span class="token punctuation">-</span> /opt/docker_mysql<span class="token punctuation">-</span>tomcat/tomcat_logs<span class="token punctuation">:</span>/usr/local/tomcat/logs
+
+</code></pre></div><h3 id="使用-docker-compose-命令管理容器">使用 docker-compose 命令管理容器 <a href="#使用-docker-compose-命令管理容器" class="header-anchor">#</a></h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 在使用 docker-compose 的命令时，默认会在当前目录下找 docker-compose.yml 文件</span>
+<span class="token comment"># 1. 基于docker-compose.yml启动管理的容器</span>
+docker-compose up -d
+
+<span class="token comment"># 2.关闭并删除容器</span>
+docker-compose down
+
+<span class="token comment">#3.开启关闭重启已经存在的由docker-compose维护的容器</span>
+docker-compose start<span class="token operator">|</span>stop<span class="token operator">|</span>restart
+
+<span class="token comment"># 4. 查看由docker-compose管理的容器</span>
+docker-compose <span class="token function">ps</span>
+
+<span class="token comment"># 5.查看日志</span>
+docker-compose logs -f
+
+</code></pre></div><h3 id="docker-compose-配置-dockerfile-使用">docker-compose 配置 Dockerfile 使用 <a href="#docker-compose-配置-dockerfile-使用" class="header-anchor">#</a></h3> <blockquote><p>使用 docker-compose.yml 文件以及 Dockerfile 文件在生成自定义镜像的同时启动当前镜像，并且由 docker-compose 去管理容器</p></blockquote> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># yml文件</span>
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.1'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ssm</span><span class="token punctuation">:</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>                           <span class="token comment"># 构建自定义镜像</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> ../                   <span class="token comment"># 指定Dockerfile文件所在路径</span>
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> Dockerfile         <span class="token comment"># 指定Dockerfile文件名称</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> ssm<span class="token punctuation">:</span>1.0.1
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> ssm
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      8081<span class="token punctuation">:</span><span class="token number">8080</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+
+<span class="token comment"># Dockerfile 文件</span>
+from daocloud.io/library/tomcat<span class="token punctuation">:</span>8.5.15<span class="token punctuation">-</span>jre8
+copy ssm.war /usr/local/tomcat/webapps
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/18/2021, 3:29:15 PM</span></div></footer> <!----> </main> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.849d1efe.js" defer></script><script src="/assets/js/2.b5d0274c.js" defer></script><script src="/assets/js/21.63a62670.js" defer></script>
+  </body>
+</html>

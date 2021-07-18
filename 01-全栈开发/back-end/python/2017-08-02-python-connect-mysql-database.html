@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>python2.7 使用 mysql 数据库 | 我的生活</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="description" content="悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。">
+    <link rel="preload" href="/assets/css/0.styles.0d1114a1.css" as="style"><link rel="preload" href="/assets/js/app.849d1efe.js" as="script"><link rel="preload" href="/assets/js/2.b5d0274c.js" as="script"><link rel="preload" href="/assets/js/28.c014ec6a.js" as="script"><link rel="prefetch" href="/assets/js/10.3fe64d4c.js"><link rel="prefetch" href="/assets/js/11.85e96007.js"><link rel="prefetch" href="/assets/js/12.7ed4383f.js"><link rel="prefetch" href="/assets/js/13.ae9e60df.js"><link rel="prefetch" href="/assets/js/14.feca9d7e.js"><link rel="prefetch" href="/assets/js/15.173172ed.js"><link rel="prefetch" href="/assets/js/16.2757dbc2.js"><link rel="prefetch" href="/assets/js/17.1801d974.js"><link rel="prefetch" href="/assets/js/18.6118e64c.js"><link rel="prefetch" href="/assets/js/19.86d38c6c.js"><link rel="prefetch" href="/assets/js/20.250f550f.js"><link rel="prefetch" href="/assets/js/21.63a62670.js"><link rel="prefetch" href="/assets/js/22.10cf29dd.js"><link rel="prefetch" href="/assets/js/23.ccd9b234.js"><link rel="prefetch" href="/assets/js/24.677f36ed.js"><link rel="prefetch" href="/assets/js/25.70aed2f0.js"><link rel="prefetch" href="/assets/js/26.de44d1a7.js"><link rel="prefetch" href="/assets/js/27.e8590507.js"><link rel="prefetch" href="/assets/js/29.02c48ef7.js"><link rel="prefetch" href="/assets/js/3.3457e0aa.js"><link rel="prefetch" href="/assets/js/30.33a6ab56.js"><link rel="prefetch" href="/assets/js/31.a0a4686b.js"><link rel="prefetch" href="/assets/js/32.eacb158c.js"><link rel="prefetch" href="/assets/js/33.ebe7927e.js"><link rel="prefetch" href="/assets/js/34.5cf58507.js"><link rel="prefetch" href="/assets/js/35.c770055d.js"><link rel="prefetch" href="/assets/js/36.3e732c9d.js"><link rel="prefetch" href="/assets/js/37.e88509ce.js"><link rel="prefetch" href="/assets/js/38.a6cb0f12.js"><link rel="prefetch" href="/assets/js/39.cd7636d0.js"><link rel="prefetch" href="/assets/js/4.82d25d49.js"><link rel="prefetch" href="/assets/js/40.f11b7add.js"><link rel="prefetch" href="/assets/js/41.31fc53ae.js"><link rel="prefetch" href="/assets/js/42.4291ef54.js"><link rel="prefetch" href="/assets/js/43.9a17a441.js"><link rel="prefetch" href="/assets/js/44.db02a181.js"><link rel="prefetch" href="/assets/js/45.e664e3b8.js"><link rel="prefetch" href="/assets/js/46.a19da9f7.js"><link rel="prefetch" href="/assets/js/5.84f15089.js"><link rel="prefetch" href="/assets/js/6.da8a8aff.js"><link rel="prefetch" href="/assets/js/7.51e0c199.js"><link rel="prefetch" href="/assets/js/8.ee4eb807.js"><link rel="prefetch" href="/assets/js/9.1aedd1ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d1114a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="ant-row"><div class="nav-button"><i aria-label="icon: bars" class="anticon anticon-bars"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg></i> <span></span></div> <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a href="/" class="router-link-active home-link"><img src="/assets/logo.png" alt="我的生活" class="logo"> <span class="site-name">我的生活</span></a> <div class="search-box mobile-search"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="ant-col ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><ul role="menu" id="nav" class="ant-menu ant-menu-horizontal ant-menu-root ant-menu-light"><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/" class="router-link-active">
+          首页
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>
+          全栈进阶
+        </span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/00-笔记/">
+          学习笔记
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/02-tools/">
+          常用工具
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul> <a href="https://github.com/fuyi501" target="_blank" rel="noopener noreferrer" class="repo-link"><i aria-label="icon: github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></i></a></nav></div></div> <!----></header> <!----> <main class="page"> <div class="theme-antdocs-content content__default"><h2 id="python-数据库-api-对象">python 数据库 api 对象 <a href="#python-数据库-api-对象" class="header-anchor">#</a></h2> <p>在 python 中，和 mysql 数据库有关的对象主要有三个，就是</p> <ul><li>connection连接对象</li> <li>数据库交互对象 cursor</li> <li>异常对象 exceptions</li></ul> <p><img src="http://images.fuyix.cn/pythonApi.png" alt="enter description here" title="pythonApi"></p> <h2 id="访问数据库基本流程">访问数据库基本流程 <a href="#访问数据库基本流程" class="header-anchor">#</a></h2> <p><img src="http://images.fuyix.cn/python%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%81%E7%A8%8B.png" alt="enter description here" title="python访问数据库流程"></p> <h2 id="数据库连接对象-connection">数据库连接对象 connection <a href="#数据库连接对象-connection" class="header-anchor">#</a></h2> <p>使用 connect 方法来连接 mysql 数据库，connect 参数如下：</p> <p><img src="http://images.fuyix.cn/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%AF%B9%E8%B1%A1connection.png" alt="enter description here" title="数据库连接对象connection"></p> <p>connection 对象有以下四个主要的方法，具体用法下面再讲。</p> <p><img src="http://images.fuyix.cn/connection%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%B9%E6%B3%95.png" alt="enter description here" title="connection对应的方法"></p> <h3 id="数据库连接实例代码">数据库连接实例代码： <a href="#数据库连接实例代码" class="header-anchor">#</a></h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># -*- coding: UTF-8 -*-</span>
+
+<span class="token keyword">import</span> MySQLdb <span class="token keyword">as</span> mdb
+
+conn <span class="token operator">=</span> mdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+  host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> 
+  port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> 
+  user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+  passwd<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> 
+  db<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">,</span> 
+  charset<span class="token operator">=</span><span class="token string">'utf8'</span>
+  <span class="token punctuation">)</span>
+
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span> cursor
+<span class="token keyword">print</span> conn
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre></div><h2 id="数据库游标对象-cursor">数据库游标对象 cursor <a href="#数据库游标对象-cursor" class="header-anchor">#</a></h2> <h3 id="cursor-对象主要有以下几个方法">cursor 对象主要有以下几个方法 <a href="#cursor-对象主要有以下几个方法" class="header-anchor">#</a></h3> <p><img src="http://images.fuyix.cn/%E6%B8%B8%E6%A0%87%E5%AF%B9%E8%B1%A1cursor.png" alt="enter description here" title="游标对象cursor"></p> <h3 id="execute-方法">execute 方法 <a href="#execute-方法" class="header-anchor">#</a></h3> <p><img src="http://images.fuyix.cn/execute%E6%96%B9%E6%B3%95.png" alt="enter description here" title="execute方法"></p> <h3 id="fetch-方法">fetch() 方法 <a href="#fetch-方法" class="header-anchor">#</a></h3> <p><img src="http://images.fuyix.cn/fetch%E6%96%B9%E6%B3%95%E4%BB%8B%E7%BB%8D.png" alt="enter description here" title="fetch方法介绍"></p> <h2 id="python-操作数据库实例演示">python 操作数据库实例演示 <a href="#python-操作数据库实例演示" class="header-anchor">#</a></h2> <h3 id="select-查询数据">select 查询数据 <a href="#select-查询数据" class="header-anchor">#</a></h3> <p><img src="http://images.fuyix.cn/select%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE.png" alt="enter description here" title="select查询数据"></p> <p>首先需要准备好一个数据库，数据库名为 <code>test</code>，数据库中有 <code>students</code> 表，我们先插入了一些数据，如下图所示：</p> <p><img src="http://images.fuyix.cn/python-mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B.png" alt="enter description here" title="python-mysql数据库实例"></p> <h3 id="实例代码">实例代码： <a href="#实例代码" class="header-anchor">#</a></h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># -*- coding: UTF-8 -*-</span>
+<span class="token keyword">import</span> MySQLdb <span class="token keyword">as</span> mdb
+
+<span class="token comment"># 也可以使用关键字参数</span>
+conn <span class="token operator">=</span> mdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+  host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> 
+  port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> 
+  user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+  passwd<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> 
+  db<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">,</span> 
+  charset<span class="token operator">=</span><span class="token string">'utf8'</span>
+  <span class="token punctuation">)</span>
+
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sql <span class="token operator">=</span> <span class="token string">&quot;select * from students&quot;</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount
+rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> rs<span class="token punctuation">:</span>
+  <span class="token keyword">print</span> <span class="token string">&quot;id = %d , name=%s , sex=%s&quot;</span> <span class="token operator">%</span> row
+
+rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> rs
+rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchmany<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> rs
+rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> rs
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="增删改查-数据库">增删改查 数据库 <a href="#增删改查-数据库" class="header-anchor">#</a></h3> <h4 id="增删改查数据库的一般流程">增删改查数据库的一般流程 <a href="#增删改查数据库的一般流程" class="header-anchor">#</a></h4> <p><img src="http://images.fuyix.cn/python-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt="enter description here" title="python-增删改查数据库"></p> <h4 id="什么是事务">什么是事务？ <a href="#什么是事务" class="header-anchor">#</a></h4> <p><img src="http://images.fuyix.cn/python-%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%BA%8B%E5%8A%A1.png" alt="enter description here" title="python-数据库-事务"></p> <p>举例来说明commit，rollback方法怎么使用</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># -*- coding: UTF-8 -*-</span>
+
+<span class="token keyword">import</span> MySQLdb <span class="token keyword">as</span> mdb
+
+conn <span class="token operator">=</span> mdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+  host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> 
+  port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> 
+  user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+  passwd<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> 
+  db<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">,</span> 
+  charset<span class="token operator">=</span><span class="token string">'utf8'</span>
+  <span class="token punctuation">)</span>
+
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">&quot;select * from students&quot;</span>
+
+sql_insert <span class="token operator">=</span> <span class="token string">'insert into students(id,sname,sex) values(7, &quot;sdf&quot;, &quot;男&quot;)'</span>
+sql_update <span class="token operator">=</span> <span class="token string">'update students set sname=&quot;李雄&quot; where id=4'</span>
+sql_delete <span class="token operator">=</span> <span class="token string">'delete from students where id&lt;3'</span>
+
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>  <span class="token comment"># 执行查询语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount  <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_insert<span class="token punctuation">)</span>  <span class="token comment"># 执行插入语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_update<span class="token punctuation">)</span>  <span class="token comment"># 执行更新语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_delete<span class="token punctuation">)</span>  <span class="token comment"># 执行删除语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>在上面的代码中，我们执行了 4 条sql语句，执行结果为 <code>5、 1、 1、 1</code>，因为我们的数据库中只有 5 条数据，所以第一条查询语句生效的有 5 条数据，后面三条语句，导致数据库更改的都只有一条数据，所以输出都为 1 。</p> <p>但是这时，我们来看数据库，发现数据库并没有改变：</p> <p><img src="http://images.fuyix.cn/python-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%AA%E6%9B%B4%E6%94%B9.png" alt="enter description here" title="python-数据库未更改"></p> <p>这是为什么呢？原因就是我们需要提交事务，使用 commit 方法提交 sql 语句的改变，才能真正更改数据库。如下代码，添加一条语句  <code>conn.commit()</code>，再执行一次</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 上面代码省略，如上面一致。</span>
+
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>  <span class="token comment"># 执行查询语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount  <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_insert<span class="token punctuation">)</span>  <span class="token comment"># 执行插入语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_update<span class="token punctuation">)</span>  <span class="token comment"># 执行更新语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_delete<span class="token punctuation">)</span>  <span class="token comment"># 执行删除语句</span>
+<span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+
+conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>执行之后，再来看数据库中的数据，发生了变化：</p> <p><img src="http://images.fuyix.cn/python-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%94%B9.png" alt="enter description here" title="python-数据库更改"></p> <p>这个时候，我们可能会想，如果执行语句有错误怎么办？如果有错误，这样执行了 commit 提交事务，那岂不是破坏了数据库，所以这个时候就需要数据库异常类，当执行sql 语句发生异常时，就需要执行 rollback 方法回滚当前事务，也就是把刚才执行的 sql 语句全部取消，回退到未执行之前的状态，这样就保护了数据库的安全。所以在执行 sql 语句时，我们都需要使用 <code>try except</code> 把数据库操作语句包含起来，来捕获异常。正常的完整代码如下所示：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># -*- coding: UTF-8 -*-</span>
+
+<span class="token keyword">import</span> MySQLdb <span class="token keyword">as</span> mdb
+
+conn <span class="token operator">=</span> mdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+  host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> 
+  port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> 
+  user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+  passwd<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> 
+  db<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">,</span> 
+  charset<span class="token operator">=</span><span class="token string">'utf8'</span>
+  <span class="token punctuation">)</span>
+
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+sql <span class="token operator">=</span> <span class="token string">&quot;select * from students&quot;</span>
+
+sql_insert <span class="token operator">=</span> <span class="token string">'insert into students(id,sname,sex) values(7, &quot;sdf&quot;, &quot;男&quot;)'</span>
+sql_update <span class="token operator">=</span> <span class="token string">'update students set sname=&quot;李雄&quot; where id=4'</span>
+sql_delete <span class="token operator">=</span> <span class="token string">'delete from students where id&lt;3'</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+  cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>  <span class="token comment"># 执行查询语句</span>
+  <span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount  <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+  cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_insert<span class="token punctuation">)</span>  <span class="token comment"># 执行插入语句</span>
+  <span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+  cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_update<span class="token punctuation">)</span>  <span class="token comment"># 执行更新语句</span>
+  <span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+  cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_delete<span class="token punctuation">)</span>  <span class="token comment"># 执行删除语句</span>
+  <span class="token keyword">print</span> cursor<span class="token punctuation">.</span>rowcount   <span class="token comment"># 查看执行 execute 方法导致mysql数据库有多少条数据发生了改变</span>
+
+  conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 提交事务</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>  <span class="token comment"># 捕获异常</span>
+  <span class="token keyword">print</span> e
+  conn<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 回滚事务</span>
+
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/18/2021, 3:11:15 PM</span></div></footer> <!----> </main> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.849d1efe.js" defer></script><script src="/assets/js/2.b5d0274c.js" defer></script><script src="/assets/js/28.c014ec6a.js" defer></script>
+  </body>
+</html>

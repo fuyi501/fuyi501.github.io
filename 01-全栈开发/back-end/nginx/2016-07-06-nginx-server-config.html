@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>nginx 服务器配置方法 | 我的生活</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="description" content="悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。">
+    <link rel="preload" href="/assets/css/0.styles.0d1114a1.css" as="style"><link rel="preload" href="/assets/js/app.849d1efe.js" as="script"><link rel="preload" href="/assets/js/2.b5d0274c.js" as="script"><link rel="preload" href="/assets/js/25.70aed2f0.js" as="script"><link rel="prefetch" href="/assets/js/10.3fe64d4c.js"><link rel="prefetch" href="/assets/js/11.85e96007.js"><link rel="prefetch" href="/assets/js/12.7ed4383f.js"><link rel="prefetch" href="/assets/js/13.ae9e60df.js"><link rel="prefetch" href="/assets/js/14.feca9d7e.js"><link rel="prefetch" href="/assets/js/15.173172ed.js"><link rel="prefetch" href="/assets/js/16.2757dbc2.js"><link rel="prefetch" href="/assets/js/17.1801d974.js"><link rel="prefetch" href="/assets/js/18.6118e64c.js"><link rel="prefetch" href="/assets/js/19.86d38c6c.js"><link rel="prefetch" href="/assets/js/20.250f550f.js"><link rel="prefetch" href="/assets/js/21.63a62670.js"><link rel="prefetch" href="/assets/js/22.10cf29dd.js"><link rel="prefetch" href="/assets/js/23.ccd9b234.js"><link rel="prefetch" href="/assets/js/24.677f36ed.js"><link rel="prefetch" href="/assets/js/26.de44d1a7.js"><link rel="prefetch" href="/assets/js/27.e8590507.js"><link rel="prefetch" href="/assets/js/28.c014ec6a.js"><link rel="prefetch" href="/assets/js/29.02c48ef7.js"><link rel="prefetch" href="/assets/js/3.3457e0aa.js"><link rel="prefetch" href="/assets/js/30.33a6ab56.js"><link rel="prefetch" href="/assets/js/31.a0a4686b.js"><link rel="prefetch" href="/assets/js/32.eacb158c.js"><link rel="prefetch" href="/assets/js/33.ebe7927e.js"><link rel="prefetch" href="/assets/js/34.5cf58507.js"><link rel="prefetch" href="/assets/js/35.c770055d.js"><link rel="prefetch" href="/assets/js/36.3e732c9d.js"><link rel="prefetch" href="/assets/js/37.e88509ce.js"><link rel="prefetch" href="/assets/js/38.a6cb0f12.js"><link rel="prefetch" href="/assets/js/39.cd7636d0.js"><link rel="prefetch" href="/assets/js/4.82d25d49.js"><link rel="prefetch" href="/assets/js/40.f11b7add.js"><link rel="prefetch" href="/assets/js/41.31fc53ae.js"><link rel="prefetch" href="/assets/js/42.4291ef54.js"><link rel="prefetch" href="/assets/js/43.9a17a441.js"><link rel="prefetch" href="/assets/js/44.db02a181.js"><link rel="prefetch" href="/assets/js/45.e664e3b8.js"><link rel="prefetch" href="/assets/js/46.a19da9f7.js"><link rel="prefetch" href="/assets/js/5.84f15089.js"><link rel="prefetch" href="/assets/js/6.da8a8aff.js"><link rel="prefetch" href="/assets/js/7.51e0c199.js"><link rel="prefetch" href="/assets/js/8.ee4eb807.js"><link rel="prefetch" href="/assets/js/9.1aedd1ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d1114a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="ant-row"><div class="nav-button"><i aria-label="icon: bars" class="anticon anticon-bars"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg></i> <span></span></div> <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a href="/" class="router-link-active home-link"><img src="/assets/logo.png" alt="我的生活" class="logo"> <span class="site-name">我的生活</span></a> <div class="search-box mobile-search"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="ant-col ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><ul role="menu" id="nav" class="ant-menu ant-menu-horizontal ant-menu-root ant-menu-light"><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/" class="router-link-active">
+          首页
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>
+          全栈进阶
+        </span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/00-笔记/">
+          学习笔记
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/02-tools/">
+          常用工具
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul> <a href="https://github.com/fuyi501" target="_blank" rel="noopener noreferrer" class="repo-link"><i aria-label="icon: github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></i></a></nav></div></div> <!----></header> <!----> <main class="page"> <div class="theme-antdocs-content content__default"><h2 id="nginx-服务器的配置">Nginx 服务器的配置 <a href="#nginx-服务器的配置" class="header-anchor">#</a></h2> <p>Nginx 服务器的使用实际上重点就在于它的配置，作为代理服务器，你可以在服务器上启动多个应用，由 Nginx 配置多个域名，实现服务的代理。</p> <p>服务器系统：ubuntu server 16.04
+nginx 版本号：nginx/1.10.0 (Ubuntu)</p> <p>登录服务器，进入到 Nginx 的安装目录 <code>/etc/nginx/</code>,可以看到很多文件</p> <div class="language-sh extra-class"><pre class="language-sh"><code>ubuntu@VM-176-3-ubuntu:~$ <span class="token builtin class-name">cd</span> /etc/nginx/
+ubuntu@VM-176-3-ubuntu:/etc/nginx$ <span class="token function">ls</span>
+conf.d          koi-utf     nginx.conf    sites-available  uwsgi_params
+fastcgi.conf    koi-win     proxy_params  sites-enabled    win-utf
+fastcgi_params  mime.types  scgi_params   snippets
+</code></pre></div><p>其中，<code>sites-enabled</code> 中存放着 nginx 的默认配置文件， <code>conf.d</code> 目录存放其他的配置文件，不过目前 <code>conf.d</code> 目录下是空的，以后可以将自定义的配置文件都放到这个目录下。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>ubuntu@VM-176-3-ubuntu:/etc/nginx$ <span class="token function">ls</span> sites-enabled/
+default
+ubuntu@VM-176-3-ubuntu:/etc/nginx$ <span class="token function">ls</span> conf.d/
+ubuntu@VM-176-3-ubuntu:/etc/nginx$ 
+</code></pre></div><p>在 nginx 目录下有一个 <code>nginx.conf</code> 配置文件，里面有这样两句代码：</p> <div class="language- extra-class"><pre class="language-text"><code>include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+</code></pre></div><p>我们将配置文件放在 <code>conf.d</code> 目录后，使用命令 <code>sudo nginx -s reload</code> ，就会重新加载里面所有的配置文件。</p> <p>下面用两个例子来验证 nginx 服务器的代理转发</p> <p>一个是 thinkjs 的测试项目，占用端口 8360；一个是 hexo 的测试项目，占用端口4000.</p> <p>首先在用户目录下下载安装这两个项目，下载好了如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ubuntu@VM-176-3-ubuntu:~$ <span class="token function">ls</span>
+blog_server  project_test
+</code></pre></div><p>thinkjs 测试项目自己带有 nginx.conf 配置文件，我们只需要将这个配置文件复制到 <code>/etc/nginx/conf.d</code> 目录下就可以了，详情请参考官方文档的 <a href="https://thinkjs.org/zh-cn/doc/2.2/deploy.html#toc-c69" target="_blank" rel="noopener noreferrer">使用 nginx 做反向代理<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>配置多个域名，实现服务的代理。</p> <p>hexo 测试项目因为里面没有 index.html 文件，所以要先 执行 <code>hexo g</code> 来生成静态文件，执行之后会生成一个 public 目录，public 目录下就会有 index.html 文件，然后我们需要为 hexo 项目写一个 conf 文件，内容类似如下：</p> <div class="language- extra-class"><pre class="language-text"><code>server {
+    listen 80;
+    server_name blog.fuyix.cn;
+    set $node_port 4000;
+
+    location / {
+	    proxy_pass http://localhost:$node_port;
+    }
+}
+</code></pre></div><p>注意：将 <code>server_name localhost</code> 里的 <code>localhost</code> 修改为对应的域名，将 <code>set $node_port 4000</code> 里的 <code>4000</code> 修改和项目里监听的端口一致。我这里使用默认的 <code>4000</code> 端口。</p> <p>然后在 <code>/etc/nginx/conf.d</code> 目录下新建 hexo_nginx.conf 文件，拷贝上面的代码粘贴在里面，然后保存退出，重新加载 nginx 的配置文件就可以了，如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">ls</span>
+thinkjs_nginx.conf
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">cat</span> thinkjs_nginx.conf
+server <span class="token punctuation">{</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name think.fuyix.cn<span class="token punctuation">;</span>
+    root /home/ubuntu/project_test/www<span class="token punctuation">;</span>
+    <span class="token builtin class-name">set</span> <span class="token variable">$node_port</span> <span class="token number">8360</span><span class="token punctuation">;</span>
+
+    index index.js index.html index.htm<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> -f <span class="token variable">$request_filename</span>/index.html <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        rewrite <span class="token punctuation">(</span>.*<span class="token punctuation">)</span> <span class="token variable">$1</span>/index.html <span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>-f <span class="token variable">$request_filename</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        rewrite <span class="token punctuation">(</span>.*<span class="token punctuation">)</span> /index.js<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    location <span class="token operator">=</span> /index.js <span class="token punctuation">{</span>
+        proxy_http_version <span class="token number">1.1</span><span class="token punctuation">;</span>
+        proxy_set_header X-Real-IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+        proxy_set_header Host <span class="token variable">$http_host</span><span class="token punctuation">;</span>
+        proxy_set_header X-NginX-Proxy <span class="token boolean">true</span><span class="token punctuation">;</span>
+        proxy_set_header Upgrade <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span>
+        proxy_set_header Connection <span class="token string">&quot;upgrade&quot;</span><span class="token punctuation">;</span>
+        proxy_pass http://127.0.0.1:<span class="token variable">$node_port</span><span class="token variable">$request_uri</span><span class="token punctuation">;</span>
+        proxy_redirect off<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    location <span class="token operator">=</span> /development.js <span class="token punctuation">{</span>
+        deny all<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location <span class="token operator">=</span> /testing.js <span class="token punctuation">{</span>
+        deny all<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location <span class="token operator">=</span> /production.js <span class="token punctuation">{</span>
+        deny all<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location ~ /static/ <span class="token punctuation">{</span>
+        etag         on<span class="token punctuation">;</span>
+        expires      max<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>   
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">sudo</span> <span class="token function">vim</span> hexo_nginx.conf 
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">ls</span>
+hexo_nginx.conf  thinkjs_nginx.conf
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">cat</span> hexo_nginx.conf 
+server <span class="token punctuation">{</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name blog.fuyix.cn<span class="token punctuation">;</span>
+    <span class="token builtin class-name">set</span> <span class="token variable">$node_port</span> <span class="token number">4000</span><span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+	    proxy_pass http://localhost:<span class="token variable">$node_port</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ <span class="token function">sudo</span> nginx -s reload
+ubuntu@VM-176-3-ubuntu:/etc/nginx/conf.d$ 
+</code></pre></div><p>注意：这里面的两个域名</p> <div class="language- extra-class"><pre class="language-text"><code>server_name think.fuyix.cn;
+server_name blog.fuyix.cn;
+</code></pre></div><p>需要到域名管理商那里进行解析的，我把它解析成二级域名了而已：</p> <p><img src="http://images.fuyix.cn/blog/server_conf_dns.png" alt="blog/server_conf_dns.png"></p> <p>到这里，所有的配置基本就完成了，下面就是启动我们的应用</p> <div class="language- extra-class"><pre class="language-text"><code>ubuntu@VM-176-3-ubuntu:~/project_test$ node www/production.js 
+[2017-02-24 11:37:57] [PRELOAD] preload packages finished 69ms
+[2017-02-24 11:37:57] [THINK] Server running at http://127.0.0.1:8360/
+[2017-02-24 11:37:57] [THINK] ThinkJS Version: 2.2.17
+[2017-02-24 11:37:57] [THINK] Cluster Status: closed
+[2017-02-24 11:37:57] [THINK] WebSocket Status: closed
+[2017-02-24 11:37:57] [THINK] File Auto Compile: false
+[2017-02-24 11:37:57] [THINK] File Auto Reload: false
+[2017-02-24 11:37:57] [THINK] App Enviroment: production
+
+ubuntu@VM-176-3-ubuntu:~/blog_server$ hexo server
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+
+</code></pre></div><p>然后就是进行域名访问了：</p> <p><img src="http://images.fuyix.cn/blog/server_conf_thinkjs.png" alt="blog/server_conf_thinkjs.png"></p> <p><img src="http://images.fuyix.cn/blog/server_conf_hexo.png" alt="blog/server_conf_hexo.png"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/18/2021, 3:11:15 PM</span></div></footer> <!----> </main> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.849d1efe.js" defer></script><script src="/assets/js/2.b5d0274c.js" defer></script><script src="/assets/js/25.70aed2f0.js" defer></script>
+  </body>
+</html>

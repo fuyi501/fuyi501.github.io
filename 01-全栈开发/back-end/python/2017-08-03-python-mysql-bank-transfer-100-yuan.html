@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>python 使用 mysql 数据库银行转账实例 | 我的生活</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="description" content="悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。">
+    <link rel="preload" href="/assets/css/0.styles.0d1114a1.css" as="style"><link rel="preload" href="/assets/js/app.849d1efe.js" as="script"><link rel="preload" href="/assets/js/2.b5d0274c.js" as="script"><link rel="preload" href="/assets/js/29.02c48ef7.js" as="script"><link rel="prefetch" href="/assets/js/10.3fe64d4c.js"><link rel="prefetch" href="/assets/js/11.85e96007.js"><link rel="prefetch" href="/assets/js/12.7ed4383f.js"><link rel="prefetch" href="/assets/js/13.ae9e60df.js"><link rel="prefetch" href="/assets/js/14.feca9d7e.js"><link rel="prefetch" href="/assets/js/15.173172ed.js"><link rel="prefetch" href="/assets/js/16.2757dbc2.js"><link rel="prefetch" href="/assets/js/17.1801d974.js"><link rel="prefetch" href="/assets/js/18.6118e64c.js"><link rel="prefetch" href="/assets/js/19.86d38c6c.js"><link rel="prefetch" href="/assets/js/20.250f550f.js"><link rel="prefetch" href="/assets/js/21.63a62670.js"><link rel="prefetch" href="/assets/js/22.10cf29dd.js"><link rel="prefetch" href="/assets/js/23.ccd9b234.js"><link rel="prefetch" href="/assets/js/24.677f36ed.js"><link rel="prefetch" href="/assets/js/25.70aed2f0.js"><link rel="prefetch" href="/assets/js/26.de44d1a7.js"><link rel="prefetch" href="/assets/js/27.e8590507.js"><link rel="prefetch" href="/assets/js/28.c014ec6a.js"><link rel="prefetch" href="/assets/js/3.3457e0aa.js"><link rel="prefetch" href="/assets/js/30.33a6ab56.js"><link rel="prefetch" href="/assets/js/31.a0a4686b.js"><link rel="prefetch" href="/assets/js/32.eacb158c.js"><link rel="prefetch" href="/assets/js/33.ebe7927e.js"><link rel="prefetch" href="/assets/js/34.5cf58507.js"><link rel="prefetch" href="/assets/js/35.c770055d.js"><link rel="prefetch" href="/assets/js/36.3e732c9d.js"><link rel="prefetch" href="/assets/js/37.e88509ce.js"><link rel="prefetch" href="/assets/js/38.a6cb0f12.js"><link rel="prefetch" href="/assets/js/39.cd7636d0.js"><link rel="prefetch" href="/assets/js/4.82d25d49.js"><link rel="prefetch" href="/assets/js/40.f11b7add.js"><link rel="prefetch" href="/assets/js/41.31fc53ae.js"><link rel="prefetch" href="/assets/js/42.4291ef54.js"><link rel="prefetch" href="/assets/js/43.9a17a441.js"><link rel="prefetch" href="/assets/js/44.db02a181.js"><link rel="prefetch" href="/assets/js/45.e664e3b8.js"><link rel="prefetch" href="/assets/js/46.a19da9f7.js"><link rel="prefetch" href="/assets/js/5.84f15089.js"><link rel="prefetch" href="/assets/js/6.da8a8aff.js"><link rel="prefetch" href="/assets/js/7.51e0c199.js"><link rel="prefetch" href="/assets/js/8.ee4eb807.js"><link rel="prefetch" href="/assets/js/9.1aedd1ed.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d1114a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="ant-row"><div class="nav-button"><i aria-label="icon: bars" class="anticon anticon-bars"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg></i> <span></span></div> <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a href="/" class="router-link-active home-link"><img src="/assets/logo.png" alt="我的生活" class="logo"> <span class="site-name">我的生活</span></a> <div class="search-box mobile-search"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div> <div class="ant-col ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><ul role="menu" id="nav" class="ant-menu ant-menu-horizontal ant-menu-root ant-menu-light"><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/" class="router-link-active">
+          首页
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>
+          全栈进阶
+        </span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/00-笔记/">
+          学习笔记
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li role="menuitem" class="ant-menu-item"><a href="/02-tools/">
+          常用工具
+        </a></li><li role="menuitem" class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute;"><div aria-haspopup="true" class="ant-menu-submenu-title"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul> <a href="https://github.com/fuyi501" target="_blank" rel="noopener noreferrer" class="repo-link"><i aria-label="icon: github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></i></a></nav></div></div> <!----></header> <!----> <main class="page"> <div class="theme-antdocs-content content__default"><h2 id="创建一个数据库">创建一个数据库 <a href="#创建一个数据库" class="header-anchor">#</a></h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>account<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+		<span class="token punctuation">`</span>acct_id<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'账户ID'</span><span class="token punctuation">,</span>
+		<span class="token punctuation">`</span>money<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token boolean">null</span> <span class="token keyword">comment</span> <span class="token string">'余额'</span>
+<span class="token punctuation">)</span><span class="token keyword">engine</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>  <span class="token comment">-- 不能设置成 MyISAM</span>
+
+<span class="token keyword">insert</span> <span class="token keyword">into</span> test<span class="token punctuation">.</span>account <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> test<span class="token punctuation">.</span>account <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="完整代码">完整代码 <a href="#完整代码" class="header-anchor">#</a></h2> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># coding:utf8  #别忘了设置python编码</span>
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> MySQLdb <span class="token keyword">as</span> mdb
+
+<span class="token keyword">class</span> <span class="token class-name">TransferMoney</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>conn <span class="token operator">=</span> conn
+
+    <span class="token keyword">def</span> <span class="token function">check_account</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> acctid<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 检查账户是否可用</span>
+        cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            sql <span class="token operator">=</span> <span class="token string">&quot;select * from account where acct_id=%s&quot;</span> <span class="token operator">%</span> acctid
+            <span class="token keyword">print</span> <span class="token string">'检查账户是否可用:'</span> <span class="token operator">+</span> sql
+            cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+            rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;账号 %s 不存在&quot;</span> <span class="token operator">%</span> acctid<span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">has_enough_money</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> acctid<span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 检查账户是否有足够的钱</span>
+
+        cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            sql <span class="token operator">=</span> <span class="token string">&quot;select * from account where acct_id=%s and money&gt;%s&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>acctid <span class="token punctuation">,</span> money<span class="token punctuation">)</span>
+            <span class="token keyword">print</span> <span class="token string">'检查账户是否有足够的钱:'</span> <span class="token operator">+</span> sql
+            cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+            rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;账号 %s 没有足够的钱&quot;</span> <span class="token operator">%</span> acctid<span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">reduce_money</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> acctid<span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 对账户的钱进行更改</span>
+        cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            sql <span class="token operator">=</span> <span class="token string">&quot;update account set money=money-%s where acct_id=%s&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>money<span class="token punctuation">,</span> acctid<span class="token punctuation">)</span>
+            <span class="token keyword">print</span> <span class="token string">'原账户减去对应的转账金额:'</span> <span class="token operator">+</span> sql
+            cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+            rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>rowcount  <span class="token comment"># 查看 sql 语句是否更改了一行</span>
+            <span class="token keyword">if</span> rs <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;账号 %s 减款失败&quot;</span> <span class="token operator">%</span> acctid<span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">add_money</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> acctid<span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 对账户的钱进行更改</span>
+        cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            sql <span class="token operator">=</span> <span class="token string">&quot;update account set money=money+%s where acct_id=%s&quot;</span> <span class="token operator">%</span> <span class="token punctuation">(</span>money<span class="token punctuation">,</span> acctid<span class="token punctuation">)</span>
+            <span class="token keyword">print</span> <span class="token string">'目标账户加上对应的转账金额:'</span> <span class="token operator">+</span> sql
+            cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+            rs <span class="token operator">=</span> cursor<span class="token punctuation">.</span>rowcount  <span class="token comment"># 查看 sql 语句是否更改了一行</span>
+            <span class="token keyword">if</span> rs <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">&quot;账号 %s 加款失败&quot;</span> <span class="token operator">%</span> acctid<span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">transfer</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> source_id<span class="token punctuation">,</span> target_id<span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>check_account<span class="token punctuation">(</span>source_id<span class="token punctuation">)</span>  <span class="token comment"># 检查原账户是否存在</span>
+            self<span class="token punctuation">.</span>check_account<span class="token punctuation">(</span>target_id<span class="token punctuation">)</span>  <span class="token comment"># 检查目标账户是否存在</span>
+            self<span class="token punctuation">.</span>has_enough_money<span class="token punctuation">(</span>source_id<span class="token punctuation">,</span> money<span class="token punctuation">)</span>  <span class="token comment"># 检查原账户是否有足够的钱</span>
+            self<span class="token punctuation">.</span>reduce_money<span class="token punctuation">(</span>source_id<span class="token punctuation">,</span> money<span class="token punctuation">)</span>  <span class="token comment"># 对原账户进行减操作</span>
+            self<span class="token punctuation">.</span>add_money<span class="token punctuation">(</span>target_id<span class="token punctuation">,</span> money<span class="token punctuation">)</span>  <span class="token comment"># 对目标账户进行加操作</span>
+
+            self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 提交事务</span>
+
+        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>conn<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">raise</span> e
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    source_id <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    target_id <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+    money <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+    conn <span class="token operator">=</span> mdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
+        host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>
+        port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span>
+        user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+        passwd<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span>
+        db<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">,</span>
+        charset<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+
+    transfer_money <span class="token operator">=</span> TransferMoney<span class="token punctuation">(</span>conn<span class="token punctuation">)</span>
+
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        transfer_money<span class="token punctuation">.</span>transfer<span class="token punctuation">(</span>source_id<span class="token punctuation">,</span> target_id<span class="token punctuation">,</span> money<span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">'转账成功'</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">'转账出错：'</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/18/2021, 3:11:15 PM</span></div></footer> <!----> </main> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.849d1efe.js" defer></script><script src="/assets/js/2.b5d0274c.js" defer></script><script src="/assets/js/29.02c48ef7.js" defer></script>
+  </body>
+</html>
